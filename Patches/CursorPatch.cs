@@ -22,7 +22,6 @@ namespace PluginsInOne.Patches
         }
         public static void CursorInit()
         {
-            //才想起来我有PictureLoad这个可以用 笑死 
             Sprite sprite = PictureLoad.LoadSprite("PluginsInOne.Resources.Cursor.png");
             Cursor.SetCursor(sprite.texture, Vector2.zero, CursorMode.Auto);
         }
