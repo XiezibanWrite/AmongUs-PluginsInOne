@@ -16,7 +16,7 @@ namespace PluginsInOne.Modules
                 player.RpcSetName(fname);
                 return;
             }
-            if (AmongUsClient.Instance.NetworkMode == NetworkModes.OnlineGame || AmongUsClient.Instance.NetworkMode == NetworkModes.LocalGame && !name.Contains('\r') && player.FriendCode.GetDevUser().HasTag())
+            if (GameStates.IsLobby && !name.Contains('\r') && player.FriendCode.GetDevUser().HasTag())
             {
                 name = player.FriendCode.GetDevUser().GetTag() + name;
             }

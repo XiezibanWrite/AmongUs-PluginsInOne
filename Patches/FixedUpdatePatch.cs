@@ -10,7 +10,7 @@ namespace PluginsInOne.Patches
         public static void Postfix(PlayerControl __instance)
         {
     
-            if (GameStates.IsLocalGame || GameStates.IsLocalGame)
+            if (GameStates.IsLocalGame || GameStates.IsOnlineGame)
             {
                 CustomName.ApplySuffix(__instance);
             }

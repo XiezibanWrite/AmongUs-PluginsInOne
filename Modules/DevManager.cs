@@ -12,18 +12,15 @@ public class DevUser
     public bool IsDev { get; set; }
     public bool DeBug { get; set; }
     public string UpName { get; set; }
-    public DevUser(string code = "", string color = "null", string tag = "null", bool isUp = false, bool isDev = false, bool deBug = false, string upName = "未认证用户")
+    public DevUser(string code = "", string color = "null", string tag = "null")
     {
         Code = code;
         Color = color;
         Tag = tag;
-        IsUp = isUp;
-        IsDev = isDev;
-        DeBug = deBug;
-        UpName = upName;
+       
     }
     public bool HasTag() => Tag != "null";
-    public string GetTag() => Color == "null" ? $"<size=1.7>{Tag}</size>\r\n" : $"<color={Color}><size=1.7>{(Tag == "#Dev" ? "Developer" : Tag)}</size></color>\r\n";
+    public string GetTag() => Color == "null" ? $"<size=1.7>{Tag}</size>\r\n" : $"<color={Color}><size=1.7>{(Tag)}</size></color>\r\n";
 }
 
 public static class DevManager
@@ -32,11 +29,14 @@ public static class DevManager
     public static List<DevUser> DevUserList = new();
     public static void Init()
     {
-        // Dev
-        DevUserList.Add(new(code: "farwig#2804", color: "#ffc0cb", tag: "Among us", isUp: true, isDev: false, deBug: false, upName: "Among us"));
-        
 
-       
+        DevUserList.Add(new(code: "farwig#2804", color: "#FFFFE0", tag: "汉化技术人员Among us"));
+        //DevUserList.Add(new(code: "sofaagile#3120", color: "null", tag: "梦初私服提供者:天寸"));  (天寸不知道能不能同意加所以先注释掉）
+        //  空白的例子   DevUserList.Add(new(code: "xxxxxx#0000", color: "#000000", tag: "));
+        DevUserList.Add(new(code: "wishrose#5936", color: "#89D5FF", tag: "汉化者along"));
+
+
+
     }
     public static bool IsDevUser(this string code) => DevUserList.Any(x => x.Code == code);
     public static DevUser GetDevUser(this string code) => code.IsDevUser() ? DevUserList.Find(x => x.Code == code) : DefaultDevUser;
