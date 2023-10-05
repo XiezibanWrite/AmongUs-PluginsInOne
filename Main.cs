@@ -27,7 +27,7 @@ public partial class PluginsInOnePlugin : BasePlugin
     {
         Logger = BepInEx.Logging.Logger.CreateLogSource("PluginsInOne");
         Logger.LogInfo("Loading Plugins...");
-        DevManager.Init();
+        //DevManager.Init();
         Harmony.PatchAll();
         Logger.LogInfo("Loading Success!");
 
