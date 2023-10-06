@@ -20,10 +20,10 @@ namespace PluginsInOne.Modules
             var template = GameObject.Find("ExitGameButton");
             var hanhuaObj = Object.Instantiate(template, null);
             Object.Destroy(hanhuaObj.GetComponent<AspectPosition>());
-            hanhuaObj.transform.localPosition = new(4.4f, -2.3f, 0);
+            hanhuaObj.transform.localPosition = new(1.4764f, -2.2764f, 0);
 
             var hanhuabutton = hanhuaObj.GetComponentInChildren<TextMeshPro>();
-            hanhuabutton.transform.localPosition = new(4.4f, -2.3f, 0);
+            hanhuabutton.transform.localPosition = new(1.4764f, -2.2764f, 0);
             hanhuabutton.alignment = TextAlignmentOptions.Right;
             __instance.StartCoroutine(Effects.Lerp(0.1f, new System.Action<float>((p) =>
             {
@@ -48,10 +48,10 @@ namespace PluginsInOne.Modules
 
             var lianxiobj = Object.Instantiate(template, null);
             Object.Destroy(lianxiobj.GetComponent<AspectPosition>());
-            lianxiobj.transform.localPosition = new(4.4f, -1.9f, 0);
+            lianxiobj.transform.localPosition = new(1.4764f, -1.8764f, 0);
 
             var lianxibutton = lianxiobj.GetComponentInChildren<TextMeshPro>();
-            lianxibutton.transform.localPosition = new(4.4f, -1.9f, 0);
+            lianxibutton.transform.localPosition = new(1.4764f, -1.8764f, 0);
             lianxibutton.alignment = TextAlignmentOptions.Right;
             __instance.StartCoroutine(Effects.Lerp(0.1f, new System.Action<float>((p) =>
             {
@@ -84,7 +84,7 @@ namespace PluginsInOne.Modules
             cursorbutton.alignment = TextAlignmentOptions.Right;
             __instance.StartCoroutine(Effects.Lerp(0.1f, new System.Action<float>((p) =>
             {
-                if(PluginsInOnePlugin.customcursor == true)
+                if (PluginsInOnePlugin.customcursor == true)
                 {
                     cursorbutton.SetText("自定义光标：开");
                 }
@@ -92,7 +92,7 @@ namespace PluginsInOne.Modules
                 {
                     cursorbutton.SetText("自定义光标：关");
                 }
-                
+
             })));
             PassiveButton passiveButtoncursor = cursorObj.GetComponent<PassiveButton>();
             SpriteRenderer buttonSpritecursor = cursorObj.transform.FindChild("Inactive").GetComponent<SpriteRenderer>();
